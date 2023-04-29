@@ -1,0 +1,15 @@
+<div  style=" justify-content: center; display: grid; grid-template-columns: auto auto auto auto auto auto auto; padding: 10px;">
+    {% for files in file_name %}
+    {% set dfs = path + files  %}
+<div style="  background-color: rgba(255, 255, 255, 0.8); padding: 15px; text-align: center;">
+    <p style="line-break:normal; margin: 4%;">
+        {{files}}
+    </p>
+    <button class="btn btn-secondary " style="margin: auto;">
+        <a style="color:wheat" href="/view/{{dfs}}" target="_blank">
+            Read
+        </a>
+    </button>
+</div>
+    {% endfor %}
+</div>

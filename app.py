@@ -74,11 +74,11 @@ def view(path):
     df = data.replace(np.NaN, '')
     # Return HTML snippet that will render the table
     return df.to_html()
-# @app.route("/delete/")
-# def deleteAll():
-#     dir = 'static\excel'
-#     for f in os.listdir(dir):
-#         os.remove(os.path.join(dir, f))
-#     return render_template("Excel.html")
+@app.route("/delete/")
+def deleteAll():
+    dir = 'static\excel'
+    for f in os.listdir(dir):
+        os.remove(os.path.join(dir, f))
+    return render_template("Excel.html")
 if __name__=='__main__':
     app.run('0.0.0.0',debug=True)

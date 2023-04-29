@@ -80,5 +80,12 @@ def deleteAll():
     for f in os.listdir(dir):
         os.remove(os.path.join(dir, f))
     return render_template("Excel.html")
+@app.route("/remove/<path>")
+def remove(path):
+    file="static/excel/"+path
+    os.remove("static/excel/"+path)
+    entries = os.listdir(r"static\excel")
+    return render_template("Excel.html",entries=entries) 
+
 if __name__=='__main__':
     app.run('0.0.0.0',debug=True)
